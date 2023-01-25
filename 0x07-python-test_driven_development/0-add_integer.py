@@ -2,11 +2,15 @@
 
 
 def add_integer(a, b=98):
-    """Returns the integer addition of a + b"""
+    """Checks if int, otherwise return sum"""
 
-    if not isinstance(a, (int, float)):
+    if type(a) == float or type(b) == float:
+        a = int(a)
+        b = int(b)
+
+    if type(a) != int:
         raise TypeError("a must be an integer")
-    elif not isinstance(b, (int, float)):
+    elif type(b) != int:
         raise TypeError("b must be an integer")
     else:
-        return int(a) + int(b)
+        return a + b
