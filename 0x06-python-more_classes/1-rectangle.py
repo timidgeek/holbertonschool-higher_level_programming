@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# 1-rectangle.py
-# Lindsey Thomas @timidgeek
 """Rectangle class, which defines a rectangle"""
 
 
