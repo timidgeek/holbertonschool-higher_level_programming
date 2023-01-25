@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-rectangle.py
+# 3-rectangle.py
 # Lindsey Thomas @timidgeek
 """Rectangle class, which defines a rectangle"""
 
@@ -39,3 +39,26 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+        def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        if self.width == 0 or self.height == 0:
+            return 0
+        return (self.width * 2 + self.height * 2)
+
+    def __str__(self):
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                string += "#"
+            if i < self.__height - 1:
+                string += "\n"
+        return string
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.width, self.height)
