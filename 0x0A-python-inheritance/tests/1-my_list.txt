@@ -1,0 +1,26 @@
+# 1-my_list.txt
+# Lindsey Thomas
+
+=======================
+How to use 1-my_list.py
+=======================
+
+```MyList``` will store a list. Contains 
+```print_sorted``` to print and sort the list.
+
+Import class ``MyList``:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Basic MyList usage:
+    >>> my_list = MyList()
+    >>> my_list.append(7)
+    >>> my_list.append(-5)
+    >>> my_list.append(9)
+    >>> my_list.append(0)
+    >>> print(my_list)
+    [7, -5, 9, 0]
+
+Basic print_sorted usage:
+    >>> my_list.print_sorted()
+    [-5, 0, 7, 9]
