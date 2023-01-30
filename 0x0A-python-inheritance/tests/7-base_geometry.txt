@@ -1,0 +1,69 @@
+# 7-base_geometry.txt
+# Lindsey Thomas
+
+=============================
+How to use 7-base_geometry.py
+=============================
+
+```BaseGeometry``` will store several public instance
+    methods, ``def area()`` and ``def integer_validator()``,
+    which validate given parameters. 
+
+Import class:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+
+    >>> bg.integer_validator("holberton", 98)
+
+    >>> bg.integer_validator("holberton", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: holberton must be greater than 0
+
+
+    >>> bg.integer_validator("holberton", -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: holberton must be greater than 0
+
+
+    >>> bg.integer_validator("holberton", "school")
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+
+    >>> bg.integer_validator("holberton", float("inf"))
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+
+    >>> bg.integer_validator("holberton", 9999999999999999999999999)
+
+
+    >>> bg.integer_validator("holberton", 90.8)
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+
+    >>> bg.integer_validator("holberton", [90])
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
