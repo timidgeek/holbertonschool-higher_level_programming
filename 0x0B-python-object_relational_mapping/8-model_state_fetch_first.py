@@ -13,10 +13,9 @@ if __name__ == "__main__":
     # Create session factory bound to the engine
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id).all()
+    first_state = session.query(State).order_by(State.id).first()
 
-    for state in states:
-        if state == states[0]:
-            print("{}: {}".format(state.id, state.name))
-        elif not states:
-            print("Nothing\n")
+    if first_state is None:
+            print("Nothing")
+    else:
+        print("{}: {}".format(first_state.id, first_state.name))
