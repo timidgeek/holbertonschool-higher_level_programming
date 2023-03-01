@@ -18,15 +18,14 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, database),
                            pool_pre_ping=True)  # checks if connection invalid
-    Base.metadata.create_all(engine)
 
     # Create session factory bound to the engine
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State):
-        if "a" in state.name:    
-            session.delete(state)
-    session.commit()
+    for state in session.query(State).filter(State.name.like('%a%')) \
+                        .order_by(State.id):
+        session.delete(state)
 
+    session.commit()
     session.close()
