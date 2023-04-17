@@ -4,11 +4,11 @@ const movieId = process.argv[2];
 const url = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
 
 request(url, (err, response, body) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
+  if (err) {
+    console.error(err);
+    return;
+  }
 
-    const data = JSON.parse(body); /* parse and store data from given star wars api */
-    console.log(`Title: ${data.title}`)
+  const data = JSON.parse(body); /* parse and store data from given star wars api */
+  console.log(`Title: ${data.title}`);
 });
