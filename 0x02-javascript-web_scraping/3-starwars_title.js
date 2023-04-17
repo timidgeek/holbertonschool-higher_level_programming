@@ -10,5 +10,5 @@ request(url, (err, response, body) => {
   }
 
   const data = JSON.parse(body); /* parse and store data from given star wars api */
-  console.log(`Title: ${data.title}`);
+  console.log(`${data.title}`);
 });
